@@ -1,4 +1,5 @@
-#simple example of running hyperrhncell (with tensorboard writer)
+"""Simple example of running hyperrhncell model (with tensorboard writer)
+"""
 
 import tensorflow as tf
 tf.logging.set_verbosity(tf.logging.WARN)
