@@ -91,19 +91,19 @@ with tf.Session() as sess:
     summary_writer = tf.summary.FileWriter(this_test,
                                             graph=tf.get_default_graph())
     lr_ = 0.0001
-    for tr_epoch in range(training_epochs):
+    for epoch in range(training_epochs):
                                         
         sess.run(iterator.initializer, feed_dict={features_placeholder: X_train,
                                           labels_placeholder: Labels})
         train_error = 0
         ac = 0
         iter = np.floor(len(X_train), batch_size)
-        for epoch in range(iter): 
+        for e in range(iter): 
             _, cost, acc, summ  = sess.run([apply_grads, loss, accuracy, merged_summary_op], feed_dict={lr : lr_})
             ac += acc
             train_error += cost
             summary_writer.add_summary(summ, tr_epoch * 50 + epoch)
         train_error = train_error/(iter)
         ac = ac/(iter)
-        print("Epoch:", '%02d' % (tr_epoch), "cost=", "{:.5f}".format(train_error))
+        print("Epoch:", '%02d' % (epoch), "cost=", "{:.5f}".format(train_error))
         print("Accuracy:", "{:.5f}".format(ac))
