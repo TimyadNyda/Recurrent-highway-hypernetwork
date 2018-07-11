@@ -1,5 +1,4 @@
 # Recurrent-highway-hypernetwork
-Tensorflow implementation of a rhn hypernetwork cell.
 
 ## References 
 [Character-Level Language Modeling with Recurrent
