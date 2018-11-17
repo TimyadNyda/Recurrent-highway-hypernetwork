@@ -14,8 +14,8 @@ logs_path = '/tmp/tensorflow_logs/example/'
 flags.DEFINE_string('test_dir', logs_path, 'Directory to log testing.')
 
 inputs_dim = 10
-h = 100
-m = 200
+h = 10
+m = 20
 drop_out = 0.3
 network_size = 5
 batch_size = 32
