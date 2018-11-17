@@ -161,6 +161,8 @@ class Hyperrhncell(object):
 
 
 def process_batch(batch_input):
-    batch_input_ = tf.transpose(batch_input, perm=[2, 0, 1])
-    timestep = tf.transpose(batch_input_)
+       """
+       from [batch_size, timesteps, features] to [timesteps, batch_size, features]
+       """
+    timestep = tf.transpose(batch_input, perm=[1, 0, 2])
     return timestep
