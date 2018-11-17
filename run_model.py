@@ -18,7 +18,7 @@ h = 100
 m = 200
 drop_out = 0.3
 network_size = 5
-batch_size = 1000
+batch_size = 32
 
 tf.reset_default_graph()
 features_placeholder = tf.placeholder(tf.float32, shape=[None, None, 23])
